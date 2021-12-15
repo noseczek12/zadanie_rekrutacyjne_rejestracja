@@ -1,6 +1,6 @@
 <?php
 
-class SignupController{
+class SignupController extends Signup{
 
     private $login;
     private $password;
@@ -16,7 +16,7 @@ class SignupController{
         $this->sex = $sex;
     }
 
-    private function signupUser(){
+    public function signupUser(){
         if($this->emptyInput() == false){
             header("location: ../index.php?error=emptyinput");
             exit();
@@ -30,7 +30,7 @@ class SignupController{
             exit();
         }
 
-        $this->setUser();
+        $this->setUser($this->login, $this->password, $this->name, $this->surname, $this->sex);
     }
 
     private function emptyInput()
