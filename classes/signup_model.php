@@ -14,14 +14,7 @@ class Signup extends DB{
             exit();
         }
 
-        $resultCheck;
-        if($statement->rowCount() > 0){
-            $resultCheck = false;
-        }
-        else{
-            $resultCheck = true;
-        }
-        return $resultCheck;
+        $statement = null;
     }  
 
     protected function checkUser($login){

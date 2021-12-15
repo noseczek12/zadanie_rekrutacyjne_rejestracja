@@ -15,7 +15,9 @@ if(isset($_POST['submit']))
     include "../classes/signup_controller.php";
     $signup = new SignupController($login,$password,$name,$surname,$sex);
     
-    //Here we run error checking
+    //Here we run error checking and sign up user
+    $signup->signupUser();
 
     //Here we go back to index page
+    header("location: ../index.php?error=none");
 }
