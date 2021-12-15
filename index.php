@@ -15,8 +15,12 @@
 		Login: <br /> <input type="text" name="login" /> <br />
 		Hasło: <br /> <input type="password" name="password" /> <br />
         Imię: <br /> <input type="text" name="name" /> <br />
-        Nazwisko: <br /> <input type="text" name="surname"/><br />
-        Płeć: <br /> <input type="text" name="sex"/><br /><br />
+        Nazwisko: <br /> <input type="text" name="surname"/><br /><br/>
+        Płeć:  <select name="sex">
+            <option value="">Wybierz...</option>
+            <option value="K">Kobieta</option>
+            <option value="M">Mężczyzna</option>
+        </select><br/><br/>
 		<input type="submit" name="submit" value="submit" />
 	
 	</form>
