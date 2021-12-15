@@ -22,9 +22,24 @@ class SignupController{
         if(empty($this->login) || empty($this->password) || empty($this->name) || empty($this->surname) || empty($this->sex)){
             $isInputEmpty = false;
         }
-        else{
+        else
+        {
             $isInputEmpty = true;
         }
         return $isInputEmpty;
     }
+
+    private function invalidLogin(){
+        $isLoginValid;
+        if(!preg_match('/^[a-zA-Z0-9]*$/',$this->login))
+        {
+            $isLoginValid = false;
+        }
+        else
+        {
+            $result = true;
+        }
+        return $isLoginValid;
+    }
+
 }
