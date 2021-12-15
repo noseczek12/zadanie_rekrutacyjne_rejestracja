@@ -5,7 +5,7 @@ class Login extends DB{
     protected function getUser($login,$password){
         $statement = $this->connect()->prepare('SELECT password FROM users WHERE login = ?;');
 
-        if(!$statement->execute(array($login,$password))){
+        if(!$statement->execute(array($login))){
             $statement = null;
             header("location: ../index.php?error=stmtfailed");
             exit();
@@ -14,7 +14,7 @@ class Login extends DB{
         if($statement->rowCount() == 0 )
         {
             $statement = null;
-            header("location: ../index.php?error=usernotfound");
+            header("location: ../index.php?error=user_not_found_in_db");
             exit();
         }
 
@@ -29,7 +29,7 @@ class Login extends DB{
         elseif($checkPassword == true){
             $statement = $this->connect()->prepare('SELECT * FROM users WHERE login = ? AND password = ?;');
 
-            if(!$statement->execute(array($login,$password))){
+            if(!$statement->execute(array($login,$passwordHashed[0]["password"]))){
                 $statement = null;
                 header("location: ../index.php?error=stmtfailed");
                 exit();
@@ -38,7 +38,7 @@ class Login extends DB{
             if($statement->rowCount() == 0 )
             {
                 $statement = null;
-                header("location: ../index.php?error=usernotfound");
+                header("location: ../index.php?error=user_not_found");
                 exit();
             }
 

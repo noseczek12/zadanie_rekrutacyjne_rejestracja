@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -34,6 +38,21 @@
 	
 	</form>
 
-    
+    <?php
+        if (isset($_SESSION["userId"])){
+    ?>
+        <p style="color:green;">Jesteś zalogowany</p>
+        <p>Witamy serdecznie na naszej stronie internetowej ! </p>
+        <p>Numer id użytkownika: <?php echo $_SESSION["userId"]?></p>
+        <a href="/includes/logout.php">Wyloguj się</a>
+    <?php
+        }
+        else
+        {
+    ?>
+        <p style="color:red;">Wylogowano</p>
+    <?php
+        }
+    ?>
 
 </body>
