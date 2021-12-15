@@ -25,4 +25,15 @@
 	
 	</form>
 
+    <h3>Logowanie</h3>
+    <form action="/includes/login.php" method="post">
+	
+		Login: <br /> <input type="text" name="login" required /> <br />
+		Hasło: <br /> <input type="password" name="password" required/> <br />
+		<input type="submit" name="submit" value="submit" />
+	
+	</form>
+
+    
+
 </body>
