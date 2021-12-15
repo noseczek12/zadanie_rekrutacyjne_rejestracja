@@ -49,14 +49,14 @@ class Login extends DB{
             $_SESSION["userLogin"] = $user[0]["login"];
             $_SESSION["userName"] = $user[0]["name"];
             $_SESSION["userSurname"] = $user[0]["surname"];
-            $_SESSION["sex"] = $user[0]["sex"];
-            if($_SESSION["sex"] == "M")
+            $_SESSION["userSex"] = $user[0]["sex"];
+            if($_SESSION["userSex"] == "M")
             {
-                $_SESSION["sex"] = "Mężczyzna";
+                $_SESSION["userSex"] = "Mężczyzna";
             }
             else
             {
-                $_SESSION["sex"] = "Kobieta";
+                $_SESSION["userSex"] = "Kobieta";
             }
 
             $statement = null;

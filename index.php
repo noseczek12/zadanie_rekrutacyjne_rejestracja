@@ -43,7 +43,9 @@
     ?>
         <p style="color:green;">Jesteś zalogowany</p>
         <p>Witamy serdecznie na naszej stronie internetowej ! </p>
-        <p>Numer id użytkownika: <?php echo $_SESSION["userId"]?></p>
+        <p>Numer id użytkownika : <?php echo $_SESSION["userId"]?></p>
+        <p>Imię i nazwisko : <?php echo $_SESSION["userName"]." ".$_SESSION["userSurname"]?></p>
+        <p>Płeć : <?php echo $_SESSION["userSex"]?></p>
         <a href="/includes/logout.php">Wyloguj się</a>
     <?php
         }
