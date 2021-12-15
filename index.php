@@ -11,32 +11,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body> 
-	
-	<h3>Rejestracja</h3>
-	
-	<form action="/includes/signup.php" method="post">
-	
-		Login: <br /> <input type="text" name="login" required /> <br />
-		Hasło: <br /> <input type="password" name="password" required/> <br />
-        Imię: <br /> <input type="text" name="name" required/> <br />
-        Nazwisko: <br /> <input type="text" name="surname" required/><br /><br/>
-        Płeć:  <select name="sex" required>
-            <option value="">Wybierz...</option>
-            <option value="K">Kobieta</option>
-            <option value="M">Mężczyzna</option>
-        </select><br/><br/>
-		<input type="submit" name="submit" value="submit" />
-	
-	</form>
 
     <h3>Logowanie</h3>
     <form action="/includes/login.php" method="post">
 	
 		Login: <br /> <input type="text" name="login" required /> <br />
-		Hasło: <br /> <input type="password" name="password" required/> <br />
+		Hasło: <br /> <input type="password" name="password" required/> <br /><br />
 		<input type="submit" name="submit" value="submit" />
 	
 	</form>
+    <br/>
+    <a href="registration.php">Nie masz konta? Zarejestruj się </a>
 
     <?php
         if (isset($_SESSION["userId"])){
@@ -58,3 +43,4 @@
     ?>
 
 </body>
+</html>
