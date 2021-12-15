@@ -12,11 +12,11 @@
 	
 	<form action="/includes/signup.php" method="post">
 	
-		Login: <br /> <input type="text" name="login" /> <br />
-		Hasło: <br /> <input type="password" name="password" /> <br />
-        Imię: <br /> <input type="text" name="name" /> <br />
-        Nazwisko: <br /> <input type="text" name="surname"/><br /><br/>
-        Płeć:  <select name="sex">
+		Login: <br /> <input type="text" name="login" required /> <br />
+		Hasło: <br /> <input type="password" name="password" required/> <br />
+        Imię: <br /> <input type="text" name="name" required/> <br />
+        Nazwisko: <br /> <input type="text" name="surname" required/><br /><br/>
+        Płeć:  <select name="sex" required>
             <option value="">Wybierz...</option>
             <option value="K">Kobieta</option>
             <option value="M">Mężczyzna</option>
