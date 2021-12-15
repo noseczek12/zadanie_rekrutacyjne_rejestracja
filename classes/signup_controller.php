@@ -18,15 +18,19 @@ class SignupController extends Signup{
 
     public function signupUser(){
         if($this->emptyInput() == false){
-            header("location: ../index.php?error=emptyinput");
+            header("location: ../index.php?error=empty_input");
             exit();
         }
         if($this->invalidLogin() == false){
-            header("location: ../index.php?error=username");
+            header("location: ../index.php?error=username_invalid");
+            exit();
+        }
+        if($this->tooShortPassword() == false){
+            header("location: ../index.php?error=too_short_password");
             exit();
         }
         if($this->loginTakenCheck() == false){
-            header("location: ../index.php?error=logintaken");
+            header("location: ../index.php?error=login_taken");
             exit();
         }
 
@@ -60,16 +64,29 @@ class SignupController extends Signup{
     }
 
     private function loginTakenCheck(){
-        $isLoginTaken;
+        $isntLoginTaken;
         if(!$this->checkUser($this->login))
         {
-            $isLoginTaken = false;
+            $isntLoginTaken = false;
         }
         else
         {
-            $isLoginTaken = true;
+            $isntLoginTaken = true;
         }
-        return $isLoginTaken;
+        return $isntLoginTaken;
+    }
+
+    private function tooShortPassword(){
+        $isPasswordTooShort;
+        if(strlen($this->password)<8)
+        {
+            $isPasswordLong = false;
+        }
+        else
+        {
+            $isPasswordLong = true;
+        }
+        return $isPasswordLong; 
     }
 
 }
