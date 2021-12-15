@@ -54,7 +54,7 @@ class SignupController extends Signup{
         }
         else
         {
-            $result = true;
+            $isLoginValid = true;
         }
         return $isLoginValid;
     }
