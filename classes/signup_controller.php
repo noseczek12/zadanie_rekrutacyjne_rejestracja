@@ -15,4 +15,16 @@ class SignupController{
         $this->surname = $surname;
         $this->sex = $sex;
     }
+
+    private function emptyInput()
+    {
+        $isInputEmpty;
+        if(empty($this->login) || empty($this->password) || empty($this->name) || empty($this->surname) || empty($this->sex)){
+            $isInputEmpty = false;
+        }
+        else{
+            $isInputEmpty = true;
+        }
+        return $isInputEmpty;
+    }
 }
