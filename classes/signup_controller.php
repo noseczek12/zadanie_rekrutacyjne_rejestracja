@@ -16,6 +16,23 @@ class SignupController{
         $this->sex = $sex;
     }
 
+    private function signupUser(){
+        if($this->emptyInput() == false){
+            header("location: ../index.php?error=emptyinput");
+            exit();
+        }
+        if($this->invalidLogin() == false){
+            header("location: ../index.php?error=username");
+            exit();
+        }
+        if($this->loginTakenCheck() == false){
+            header("location: ../index.php?error=logintaken");
+            exit();
+        }
+
+        $this->setUser();
+    }
+
     private function emptyInput()
     {
         $isInputEmpty;

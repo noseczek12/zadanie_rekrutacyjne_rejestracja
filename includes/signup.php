@@ -9,7 +9,8 @@ if(isset($_POST['submit']))
     $surname = $_POST['surname'];
     $sex = $_POST['sex'];
 
-    //Here we make instance of Signup controller class and
+    //Here we make instance of Signup controller class
+    include "../classes/db_class.php";
     include "../classes/signup_class.php";
     include "../classes/signup_controller.php";
     $signup = new SignupController($login,$password,$name,$surname,$sex);
