@@ -31,7 +31,7 @@ class SignupController{
 
     private function invalidLogin(){
         $isLoginValid;
-        if(!preg_match('/^[a-zA-Z0-9]*$/',$this->login))
+        if(!preg_match('/^[a-zA-Z0-9]*$/',$this->login) && strlen($this->login)<6)
         {
             $isLoginValid = false;
         }
