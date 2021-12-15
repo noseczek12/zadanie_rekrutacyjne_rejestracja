@@ -42,4 +42,17 @@ class SignupController{
         return $isLoginValid;
     }
 
+    private function loginTakenCheck(){
+        $isLoginTaken;
+        if(!$this->checkUser($this->login))
+        {
+            $isLoginTaken = false;
+        }
+        else
+        {
+            $isLoginTaken = true;
+        }
+        return $isLoginTaken;
+    }
+
 }

@@ -3,7 +3,7 @@
 class Signup extends DB{
 
       protected function checkUser($login){
-        $statement = $this->connect()->prepare('SELECT login FROM users WHERE login = ? OR users_email = ?;');
+        $statement = $this->connect()->prepare('SELECT login FROM users WHERE login = ?');
 
         if(!$statement->execute(array($login))){
             $statement = null;
