@@ -15,6 +15,6 @@ if(isset($_POST["submit"]))
     //Here we run error checking and log in user
     $login->loginUser();
 
-    //Here we go back to index page
-    header("location: ../index.php?error=none");
+    //Here we redirect logged in user to home page
+    header("location: ../home.php?errors=none");
 }
