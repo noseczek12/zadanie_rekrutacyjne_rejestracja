@@ -13,11 +13,11 @@
 </head>
 <body> 
 
-    <div class="container login-container">
+    <div class="d-flex justify-content-center container login-container ">
     <div class="col-md-6 login-form-2">
         <h3>Logowanie</h3>
-        <p style="color:red;"><?php if(!empty($_GET['message']))echo $message = $_GET['message']?></p>
-        <p style="color:red;"><?php if(!empty($_GET['error']) && $_GET['error']!="none") echo $message = $_GET['error']?></p>
+        <p class="error"><?php if(!empty($_GET['message']))echo $message = $_GET['message']?></p>
+        <p class="error"><?php if(!empty($_GET['error']) && $_GET['error']!="none") echo $message = $_GET['error']?></p>
             <form action="/includes/login.php" method="post">
                 <div class="form-group">
                 <label for="loginInput">Login</label>
