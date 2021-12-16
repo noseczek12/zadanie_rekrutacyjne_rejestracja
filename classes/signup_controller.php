@@ -18,19 +18,19 @@ class SignupController extends Signup{
 
     public function signupUser(){
         if($this->emptyInput() == false){
-            header("location: ../index.php?error=empty_input");
+            header("location: /registration.php?error=Pusty Formularz");
             exit();
         }
         if($this->invalidLogin() == false){
-            header("location: ../index.php?error=username_invalid");
+            header("location: /registration.php?error=Zbyt krótki login(przynajmniej 6 znaków)");
             exit();
         }
         if($this->tooShortPassword() == false){
-            header("location: ../index.php?error=too_short_password");
+            header("location: /registration.php?error=Zbyt krótkie hasło(przynajmniej 8 znaków)");
             exit();
         }
         if($this->loginTakenCheck() == false){
-            header("location: ../index.php?error=login_taken");
+            header("location: /registration.php?error=Login w użyciu, proszę wpisać inny");
             exit();
         }
 
@@ -52,7 +52,7 @@ class SignupController extends Signup{
 
     private function invalidLogin(){
         $isLoginValid;
-        if(!preg_match('/^[a-zA-Z0-9]*$/',$this->login) && strlen($this->login)<6)
+        if(strlen($this->login)<6)
         {
             $isLoginValid = false;
         }

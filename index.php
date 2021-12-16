@@ -13,6 +13,7 @@
 <body> 
 
     <h3>Logowanie</h3>
+    <p style="color:red;"><?php if(!empty($_GET['error']) && $_GET['error']!="none")echo $message = $_GET['error']?></p>
     <form action="/includes/login.php" method="post">
 	
 		Login: <br /> <input type="text" name="login" required /> <br />

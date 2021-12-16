@@ -14,7 +14,7 @@ class Login extends DB{
         if($statement->rowCount() == 0 )
         {
             $statement = null;
-            header("location: ../index.php?error=user_not_found_in_db");
+            header("location: ../index.php?error=Nie znaleziono użytkownika!");
             exit();
         }
 
