@@ -8,7 +8,8 @@ class SignupController extends Signup{
     private $surname;
     private $sex;
 
-    public function __Construct($login,$password,$name,$surname,$sex){
+    public function __Construct($login,$password,$name,$surname,$sex)
+    {
         $this->login = $login;
         $this->password = $password;
         $this->name = $name;
@@ -16,20 +17,25 @@ class SignupController extends Signup{
         $this->sex = $sex;
     }
 
-    public function signupUser(){
-        if($this->emptyInput() == false){
+    public function signupUser()
+    {
+        if($this->emptyInput() == false)
+        {
             header("location: /registration.php?error=Pusty Formularz");
             exit();
         }
-        if($this->invalidLogin() == false){
+        if($this->invalidLogin() == false)
+        {
             header("location: /registration.php?error=Zbyt krótki login(przynajmniej 6 znaków)");
             exit();
         }
-        if($this->tooShortPassword() == false){
+        if($this->tooShortPassword() == false)
+        {
             header("location: /registration.php?error=Zbyt krótkie hasło(przynajmniej 8 znaków)");
             exit();
         }
-        if($this->loginTakenCheck() == false){
+        if($this->loginTakenCheck() == false)
+        {
             header("location: /registration.php?error=Login w użyciu, proszę wpisać inny");
             exit();
         }
@@ -40,7 +46,8 @@ class SignupController extends Signup{
     private function emptyInput()
     {
         $isInputEmpty;
-        if(empty($this->login) || empty($this->password) || empty($this->name) || empty($this->surname) || empty($this->sex)){
+        if(empty($this->login) || empty($this->password) || empty($this->name) || empty($this->surname) || empty($this->sex))
+        {
             $isInputEmpty = false;
         }
         else
@@ -50,7 +57,8 @@ class SignupController extends Signup{
         return $isInputEmpty;
     }
 
-    private function invalidLogin(){
+    private function invalidLogin()
+    {
         $isLoginValid;
         if(strlen($this->login)<6)
         {
@@ -63,7 +71,8 @@ class SignupController extends Signup{
         return $isLoginValid;
     }
 
-    private function loginTakenCheck(){
+    private function loginTakenCheck()
+    {
         $isntLoginTaken;
         if(!$this->checkUser($this->login))
         {
@@ -76,7 +85,8 @@ class SignupController extends Signup{
         return $isntLoginTaken;
     }
 
-    private function tooShortPassword(){
+    private function tooShortPassword()
+    {
         $isPasswordTooShort;
         if(strlen($this->password)<8)
         {

@@ -5,13 +5,16 @@ class LoginController extends Login{
     private $login;
     private $password;
 
-    public function __Construct($login,$password){
+    public function __Construct($login,$password)
+    {
         $this->login = $login;
         $this->password = $password;
     }
 
-    public function loginUser(){
-        if($this->emptyInput() == false){
+    public function loginUser()
+    {
+        if($this->emptyInput() == false)
+        {
             header("location: ../index.php?error=empty_input");
             exit();
         }
@@ -22,7 +25,8 @@ class LoginController extends Login{
     private function emptyInput()
     {
         $isInputEmpty;
-        if(empty($this->login) || empty($this->password)){
+        if(empty($this->login) || empty($this->password))
+        {
             $isInputEmpty = false;
         }
         else
