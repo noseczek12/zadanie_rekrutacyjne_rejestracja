@@ -5,4 +5,4 @@ session_unset();
 session_destroy();
 
 //Going back to front page after logout
-header("Location: ../index.php?error=none");
+header("Location: ../index.php?message=Wylogowano");
