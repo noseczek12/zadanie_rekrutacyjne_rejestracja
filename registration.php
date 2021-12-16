@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <div class="d-flex justify-content-center container login-container ">
+    <div class="d-flex justify-content-center login-container ">
     <div class="col-md-6 login-form-2">
     <h3>Rejestracja</h3>
     <p class="error"><?php if(!empty($_GET['error']) && $_GET['error']!="none") echo $message = $_GET['error']?></p>

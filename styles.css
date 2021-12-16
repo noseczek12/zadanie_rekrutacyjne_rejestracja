@@ -38,3 +38,28 @@
     color:red;
     text-align:center;
 }
+
+.success{
+    color: lime;
+}
+
+.container{
+    margin-top: 5%;
+    padding: 5%;
+    background: #0062cc;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    color:white;
+    text-align:center;
+    width:25%;
+}
+
+.btnLogout{
+    font-weight: 600;
+    color: #0062cc;
+    background-color: #fff;
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
