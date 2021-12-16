@@ -23,7 +23,7 @@ class Login extends DB{
 
         if($checkPassword == false){
             $statement = null;
-            header("location: ../index.php?error=wrong_password");
+            header("location: ../index.php?error=Nieprawidłowe hasło!");
             exit();
         }
         elseif($checkPassword == true){
@@ -38,7 +38,7 @@ class Login extends DB{
             if($statement->rowCount() == 0 )
             {
                 $statement = null;
-                header("location: ../index.php?error=user_not_found");
+                header("location: ../index.php?error=Nie ma takiego użytkownika!");
                 exit();
             }
 
